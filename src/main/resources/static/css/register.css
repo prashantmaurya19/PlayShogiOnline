@@ -1,0 +1,64 @@
+body {
+  --dark-side-shadow: rgba(0, 0, 0, 1);
+  background: -webkit-linear-gradient(
+    90deg,
+    var(--dark-side-shadow),
+    rgba(6, 100, 0, 1),
+    var(--dark-side-shadow)
+  );
+  background: linear-gradient(
+    90deg,
+    var(--dark-side-shadow),
+    rgba(6, 100, 0, 1),
+    var(--dark-side-shadow)
+  );
+  color: #d0e7d2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #d0e7d2;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #d0e7d2;
+}
+
+.card-header {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary {
+  background-color: #006400;
+  border-color: #006400;
+}
+
+.btn-primary:hover {
+  background-color: #008000;
+  border-color: #008000;
+}
+
+a {
+  color: #a0c2a4;
+}
+
+a:hover {
+  color: #c2e5c6;
+}

@@ -1,0 +1,79 @@
+body {
+  --dark-side-shadow: rgba(0, 0, 0, 1);
+  background: -webkit-linear-gradient(
+    90deg,
+    var(--dark-side-shadow),
+    rgba(6, 100, 0, 1),
+    var(--dark-side-shadow)
+  );
+  background: linear-gradient(
+    90deg,
+    var(--dark-side-shadow),
+    rgba(6, 100, 0, 1),
+    var(--dark-side-shadow)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  width: 350px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Dark Green with transparency */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly lighter border with transparency */
+  border-radius: 8px;
+  color: white;
+  backdrop-filter: blur(10px); /* Glass effect */
+}
+
+.login-container .form-control {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Darker green for input fields with transparency */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+.login-container .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.login-container .btn-primary {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+.login-container .btn-primary:hover {
+  background-color: rgba(25, 111, 25, 0.8);
+  border-color: rgba(25, 111, 25, 0.9);
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+}
+.signup-link a {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Light green for the link with transparency */
+  text-decoration: none;
+}
+.signup-link a:hover {
+  color: rgba(0, 225, 0, 0.9);
+  text-decoration: underline;
+}
