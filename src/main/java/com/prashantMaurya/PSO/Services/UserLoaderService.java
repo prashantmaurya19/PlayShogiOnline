@@ -19,8 +19,7 @@ public class UserLoaderService implements UserDetailsService {
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     UserEntity u = this.ur.findByUsername(username);
-    if (u == null)
-      throw new UnsupportedOperationException("Unimplemented method 'loadUserByUsername'");
+    if (u == null) throw new UsernameNotFoundException("User  " + username + " not found!!!");
 
     return User.builder()
         .username(u.getUsername())

@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### MY ###
+photoshop assest images/
+*.vim
+*.db
+*.log

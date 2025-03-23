@@ -1,7 +1,6 @@
 package com.prashantMaurya.PSO.Services;
 
 import com.prashantMaurya.PSO.Entities.UserEntity;
-import com.prashantMaurya.PSO.Pojo.RegisterResponse;
 import com.prashantMaurya.PSO.Pojo.User;
 import com.prashantMaurya.PSO.Repo.Users;
 import jakarta.transaction.Transactional;
@@ -63,17 +62,14 @@ public class UserService {
   }
 
   @Transactional
-  public RegisterResponse create(User u) {
-    RegisterResponse r = new RegisterResponse(false);
-    if (!this.isValidUser(u)) return r;
+  public User create(User u) {
+    if (!this.isValidUser(u)) return null;
     if (!this.isValidRole(u)) {
       u.setRoles(new ArrayList<>());
-      u.getRoles().add("User");
-      System.out.println("User infog = " + u.getUsername() + " " + u.getPassword());
+      u.getRoles().add("USER");
     }
     this.saveNewUser(this.mm.map(u, UserEntity.class));
-    r.setStatus(true);
-    return r;
+    return u;
   }
 
   @Transactional
