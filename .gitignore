@@ -33,7 +33,6 @@ build/
 .vscode/
 
 ### MY ###
-photoshop assest images/
 *.vim
 *.db
 *.log

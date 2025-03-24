@@ -61,6 +61,10 @@
           box-shadow 0.3s ease;
         text-align: center;
         margin: 10px; /* Add margin around each button */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
       }
 
       .chess-button:hover {
@@ -86,10 +90,10 @@
       class="container d-flex justify-content-center align-items-center vh-100 vw-100"
     >
       <div class="button-grid w-50 h-50">
-        <button class="chess-button">1v1</button>
-        <button class="chess-button">Settings</button>
-        <button class="chess-button">Support</button>
-        <button class="chess-button">About</button>
+        <a th:href="@{/auth/shogi}" class="chess-button">1v1</a>
+        <a th:href="@{/auth/setting}" class="chess-button">Settings</a>
+        <a th:href="@{/auth/shogi}" class="chess-button">Support</a>
+        <a th:href="@{/auth/shogi}" class="chess-button">About</a>
       </div>
     </div>
 

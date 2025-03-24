@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shogi Game</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .board {
+        display: grid;
+        grid-template-columns: repeat(9, 50px);
+        grid-template-rows: repeat(9, 50px);
+        border: 1px solid black;
+      }
+
+      .square {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+      }
+
+      #chat-messages {
+        height: 300px;
+        overflow-y: auto;
+      }
+
+      #game-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="game-container">
+      <div class="col-md-6">
+        <div class="board" id="shogi-board"></div>
+        <div id="captured-pieces-player1"></div>
+        <div id="captured-pieces-player2"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{js/shogi.js}"></script>
+    <script th:inline="javascript">
+      // ... (Thymeleaf variables and sendMessage function) ...
+      //Game logic and piece movement.
+      //const player1Name = [[${player1Name}]];
+      //const player2Name = [[${player2Name}]];
+      //const player1Rating = [[${player1Rating}]];
+      //const player2Rating = [[${player2Rating}]];
+      const player1Name = "pm";
+      const player2Name = "cm";
+      const player1Rating = "1900";
+      const player2Rating = "1800";
+
+      function sendMessage() {
+        const messageInput = document.getElementById("message-input");
+        const message = messageInput.value;
+        if (message.trim() !== "") {
+          const chatMessages = document.getElementById("chat-messages");
+          const messageElement = document.createElement("div");
+          messageElement.textContent = message;
+          chatMessages.appendChild(messageElement);
+          messageInput.value = "";
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }
+      const boardElement = document.getElementById("shogi-board");
+      const capturedPlayer1 = document.getElementById(
+        "captured-pieces-player1",
+      );
+      const capturedPlayer2 = document.getElementById(
+        "captured-pieces-player2",
+      );
+      let gameState = {};
+      initGame();
+    </script>
+  </body>
+</html>

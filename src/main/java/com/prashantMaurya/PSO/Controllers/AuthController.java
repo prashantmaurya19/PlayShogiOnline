@@ -7,8 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
+  @GetMapping("/game")
+  public String getGamePage() {
+    return "game";
+  }
+
+  @GetMapping("/setting")
+  public String getSettingPage() {
+    return "setting";
+  }
+
   @GetMapping("/dashboard")
-  public String getLoginPage() {
+  public String getDashboard() {
     return "dashboard";
   }
 }
