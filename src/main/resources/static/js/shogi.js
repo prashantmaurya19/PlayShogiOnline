@@ -1,6 +1,25 @@
 // const boardElement = document.querySelector("#shogi-board");
 // const capturedPlayer1 = document.querySelector("#captured-pieces-player1");
 // const capturedPlayer2 = document.querySelector("#captured-pieces-player2");
+const piece_maping = {
+  p1: "/images/p.png",
+  p2: "/images/p.png",
+  k: "/images/k2.png",
+  k2: "/images/k2.png",
+  g1: "/images/k1.png",
+  g2: "/images/q1.png",
+  s1: "/images/bi.png",
+  s2: "/images/bi.png",
+  n1: "/images/r1.png",
+  n2: "/images/r1.png",
+  l1: "/images/bi.png",
+  l2: "/images/r1.png",
+  b2: "/images/ki.png",
+  r2: "/images/ki.png",
+  b1: "/images/ki.png",
+  r1: "/images/ki.png",
+};
+
 function initGame() {
   gameState = {
     board: [
@@ -31,7 +50,11 @@ function renderBoard() {
       square.dataset.row = rowIndex;
       square.dataset.col = colIndex;
       if (piece) {
-        square.textContent = piece; //visual of the piece. Change this to images/unicode.
+        square.style.backgroundImage = `url("${piece_maping[piece]}")`;
+        square.style.backgroundSize = "cover";
+        square.style.backgroundRepeat = "no repeat";
+        square.style.backgroundPosition = "center";
+        // square.textContent = piece; //visual of the piece. Change this to images/unicode.
         square.addEventListener("click", () =>
           handlePieceClick(rowIndex, colIndex),
         );

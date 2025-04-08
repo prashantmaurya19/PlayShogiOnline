@@ -1,11 +1,115 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:tiles="http://www.thymeleaf.org"
+>
   <head>
     <meta charset="ISO-8859-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Shogi</title>
   </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+      backdrop-filter: blur(10px); /* Optional blur effect */
+      position: sticky;
+      top: 0;
+      z-index: 100; /* Ensure it stays on top */
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .navbar-nav {
+      margin-left: auto; /* Push buttons to the right */
+    }
+
+    .navbar-nav .nav-item {
+      margin-left: 10px; /* Space between buttons */
+    }
+    body {
+      --dark-side-shadow: rgba(0, 0, 0, 1);
+      background: -webkit-linear-gradient(
+        90deg,
+        var(--dark-side-shadow),
+        rgba(6, 100, 0, 1),
+        var(--dark-side-shadow)
+      );
+      background: linear-gradient(
+        90deg,
+        var(--dark-side-shadow),
+        rgba(6, 100, 0, 1),
+        var(--dark-side-shadow)
+      );
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 span {
+      color: white;
+      font-size: 4rem;
+      border: 1px solid white;
+      padding: 2%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    h1 {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      background-image: url("/images/pso-background.png");
+      background-size: 80% 160%;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: brightness(60%);
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+  </style>
   <body>
-    <h1>Welcome to the world of shogi!!!</h1>
+    <section></section>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Online Shogi</a>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-primary" href="/login"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary" href="/signup">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1><span>Welcome to the world of shogi!!!</span></h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

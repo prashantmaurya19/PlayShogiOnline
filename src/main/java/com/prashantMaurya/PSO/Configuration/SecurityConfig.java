@@ -20,7 +20,7 @@ public class SecurityConfig {
     http.authorizeHttpRequests(
         request ->
             request
-                .requestMatchers("/public/**", "/", "/signup/**", "/register/**")
+                .requestMatchers("/game-ws/**", "/public/**", "/", "/signup/**", "/register/**")
                 .permitAll()
                 .requestMatchers(
                     PathRequest.toH2Console(), PathRequest.toStaticResources().atCommonLocations())

@@ -15,7 +15,6 @@ public class UserService {
 
   final Users ur;
   final ModelMapper mm;
-  // final PasswordEncoder pe = new BCryptPasswordEncoder();
   final PasswordEncoder pe;
 
   public UserService(Users a, ModelMapper mm, PasswordEncoder pe) {

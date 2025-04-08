@@ -36,3 +36,5 @@ build/
 *.vim
 *.db
 *.log
+/Screenshots/
+*.txt

@@ -1,6 +1,5 @@
 body {
   --dark-side-shadow: rgba(0, 0, 0, 1);
-  /* background-image:background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 255, 0, 0.5)), url('pso-background.png'); */
   background: -webkit-linear-gradient(
     90deg,
     var(--dark-side-shadow),
@@ -21,14 +20,14 @@ body {
 
 section {
   background-image: url("/images/pso-background.png");
-  background-size: 80% 80%;
+  background-size: 80% 110%;
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(60%);
   position: fixed;
   top: 0;
   right: 0;
-  weight: 100%;
+  width: 100%;
   height: 100%;
   z-index: -1;
   display: flex;

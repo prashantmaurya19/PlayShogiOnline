@@ -8,89 +8,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" th:href="@{/css/base.html}" />
-    <style>
-      body {
-        --dark-side-shadow: rgba(0, 0, 0, 1);
-        background: -webkit-linear-gradient(
-          90deg,
-          var(--dark-side-shadow),
-          rgba(6, 100, 0, 1),
-          var(--dark-side-shadow)
-        );
-        background: linear-gradient(
-          90deg,
-          var(--dark-side-shadow),
-          rgba(6, 100, 0, 1),
-          var(--dark-side-shadow)
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-      }
-
-      #background {
-        background-image: url("/images/pso-background.png");
-        background-size: 80% 110%;
-        background-repeat: no-repeat;
-        background-position: center;
-        filter: brightness(60%);
-        position: fixed;
-        top: 0;
-        right: 0;
-        weight: 100%;
-        height: 100%;
-        z-index: -1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-      }
-
-      .chess-button {
-        padding: 1% 1%;
-        font-size: 1.1rem;
-        border: 1px solid white;
-        border-radius: 4px;
-        background-color: #066400;
-        color: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        transition:
-          background-color 0.3s ease,
-          box-shadow 0.3s ease;
-        text-align: center;
-        margin: 10px; /* Add margin around each button */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-      }
-
-      .chess-button:hover {
-        background-color: #055400;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      .chess-button:active {
-        background-color: #033c00;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      }
-
-      .button-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px; /* Adjust gap for increased spacing */
-      }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}" />
   </head>
   <body class="bg-light">
     <section id="background" class="w-100 h-100"></section>
+    <header th:replace="base::authHeader"></header>
     <div
       class="container d-flex justify-content-center align-items-center vh-100 vw-100"
     >
       <div class="button-grid w-50 h-50">
-        <a th:href="@{/auth/shogi}" class="chess-button">1v1</a>
+        <a th:href="@{/auth/game}" class="chess-button">1v1</a>
         <a th:href="@{/auth/setting}" class="chess-button">Settings</a>
         <a th:href="@{/auth/shogi}" class="chess-button">Support</a>
         <a th:href="@{/auth/shogi}" class="chess-button">About</a>

@@ -1,0 +1,56 @@
+@import "base";
+@import "navbars";
+
+
+#background {
+  background-image: url("/images/pso-background.png");
+  background-size: 80% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(60%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.chess-button {
+  padding: 1% 1%;
+  font-size: 1.1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: #066400;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: center;
+  margin: 10px; /* Add margin around each button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.chess-button:hover {
+  background-color: #055400;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.chess-button:active {
+  background-color: #033c00;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Adjust gap for increased spacing */
+}

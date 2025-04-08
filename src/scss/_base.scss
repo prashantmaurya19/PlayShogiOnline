@@ -1,0 +1,16 @@
+@import "util";
+
+body {
+  @include flex_center();
+  $dark-side-shadow: rgba(0, 0, 0, 1);
+  background: linear-gradient(
+    90deg,
+    $dark-side-shadow,
+    rgba(6, 100, 0, 1),
+   $dark-side-shadow 
+  );
+  height: 100vh;
+  width: 100vw;
+
+}
+
