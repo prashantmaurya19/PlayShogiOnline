@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <header th:replace="base::authHeader"></header>
+    <header th:replace="~{base::authHeader}"></header>
     <div class="container" id="game-container">
       <div class="col-md-6" style="max-width: max-content">
         <div id="player1" class="player">P1: prashant(1900)</div>
@@ -21,45 +21,11 @@
         <div id="captured-pieces-player2"></div>
       </div>
       <div id="chatbox" class="col-md-4">
-        <p>hellow</p>
         <input id="chat" placeholder="Enter message" type="text" />
       </div>
     </div>
     <script th:src="@{~/js/shogi.js}"></script>
-    <script>
-      const socket = new WebSocket("ws://" + window.location.host + "/game-ws"); // Adjust for https if needed
-
-      socket.onopen = function (event) {
-        console.log("WebSocket connection opened");
-      };
-
-      socket.onmessage = function (event) {
-        const message = document.createElement("p");
-        message.textContent = event.data;
-        message.style.alignSelf = "start";
-        document
-          .getElementById("chatbox")
-          .insertBefore(message, document.getElementById("chat"));
-        console.log(event);
-      };
-
-      socket.onclose = function (event) {
-        console.log("WebSocket connection closed");
-      };
-
-      document.getElementById("chat").addEventListener("keypress", (e) => {
-        if (e.key == "Enter") {
-          socket.send(e.target.value);
-          const message = document.createElement("p");
-          message.textContent = e.target.value;
-          message.style.alignSelf = "end";
-          document
-            .getElementById("chatbox")
-            .insertBefore(message, document.getElementById("chat"));
-          e.target.value = "";
-        }
-      });
-    </script>
+    <script></script>
     <script th:inline="javascript">
       // ... (Thymeleaf variables and sendMessage function) ...
       //Game logic and piece movement.
